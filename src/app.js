@@ -15,7 +15,8 @@ app.use(express.json());
 app.use(cors());
 app.use('/user', userRouter);
 app.use('/booking', bookingRouter);
-app.use(destinationRouter);
+app.use('/destination', destinationRouter);
+
 
 // Error Handling
 app.use((req, res, next) => {

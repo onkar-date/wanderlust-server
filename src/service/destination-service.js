@@ -11,6 +11,12 @@ destinationService.getDestination = async (destinationId) => {
     }
 }
 
+destinationService.searchDestination = async (searchKey) => {
+    const searchRegex = new RegExp(`.*${searchKey}.*`, "i");
+    const destinations = await DestinationModel.find({'continent' : { $regex: searchRegex }});
+    return destinations;
+}
+
 // add destination
 destinationService.addDestination = async (destination) => {
     const createdDestination = await DestinationModel.create(destination);
