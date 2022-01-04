@@ -7,7 +7,7 @@ const databaseConnection = require('./utilities/connection');
 const userRouter = require('./routes/user-router');
 const destinationRouter = require('./routes/destination-router');
 const bookingRouter = require('./routes/booking-router');
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 
 databaseConnection();
 
